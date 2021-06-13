@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# MM127
+*.jar
+*.zip
+in/
+out/
