@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # コンパイル
-g++ -std=c++17 -O2 -Wall -Wextra -o KKT89.out CarRacing.cpp
+g++ -std=c++11 -O2 -Wall -Wextra -o KKT89.out CarRacing.cpp
 #[st, en] のseed のファイルを処理する．procsはプロセス数
 st=1
-en=10
+en=100
 procs=8
 # インタラクティブ処理の関数
 f(){
@@ -47,4 +47,4 @@ done
 # 並列処理
 seq -f '%04g' $st $en | xargs -t -n1 -P$procs -I{} bash -c "f {}"
 # score.txt に書き込まれたスコアの計算
-# python3 evaluate.py
+python3 evaluate.py
